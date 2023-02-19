@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        p{
+            direction: rtl;
+        }
+        body{
+            padding: 20px;
+        }
+        
+        .box-holder{
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 30px ;
+        }
+        .box1{
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+            text-align: center;
+            background: red;
+
+        }
+        .box2{
+            display: none;
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+            text-align: center;
+            background: red;
+
+        }
+        .box-hover:hover>div{
+            display: block;
+        }
+        .list{
+            list-style: decimal;
+            direction: rtl;
+            margin-right: 50px;
+        }
+        .issue1>div{
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 5px auto;
+        }
+        .issue1>div:nth-last-of-type(1){
+            background: red;
+        }
+        .issue1>div:nth-last-of-type(2){
+            background: blue;
+        }
+        .issue1:hover>div:nth-of-type(1){
+            display: none;
+        }
+
+        /* ********************************* opacity *********************************** */
+        .box4{
+            width: 100px;
+            height: 100px;
+            background: red;
+            opacity: 1;
+            margin: 10px auto;
+        }
+        .box5{
+            width: 100px;
+            height: 100px;
+            background: red;
+            opacity: .5;
+            margin: 10px auto;
+
+        }
+        .box6{
+            width: 100px;
+            height: 100px;
+            background: red;
+            opacity: 0;
+            margin: 10px auto;
+
+        }
+        .box7{
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+            text-align: center;
+            background: red;
+            opacity: 0;
+
+        }
+        .box-hover1:hover>div{
+            opacity: 1;
+        }
+        .box8{
+            width: 100px;
+            height: 100px;
+            margin: 40px auto;
+            text-align: center;
+            background: red;
+            opacity: 0;
+            transition: 1s linear;
+
+        }
+        .box-hover2:hover>div{
+            opacity: 1;
+        }
+
+
+        .box-issue2>div{
+            width: 50px;
+            height: 50px;
+            margin: 5px auto;
+            transition: .4s linear;
+        }
+        .box-issue2>div:nth-of-type(1){
+            background: blue;
+        }
+        .box-issue2>div:nth-of-type(2){
+            background: red;
+        }
+        .box-issue2:hover>div:nth-of-type(1){
+            opacity: 0;
+        }
+
+        .box-issue3>div{
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 5px auto;
+            visibility: visible;
+        }
+        .box-issue3>div:nth-of-type(1){
+            background: blue;
+        }
+        .box-issue3>div:nth-of-type(2){
+            background: red;
+        }
+        .box-issue3:hover>div:nth-of-type(1){
+            visibility: hidden;
+        }
+
+
+        .menu{
+            margin: 20px auto;
+            width: 300px;
+            min-height: 30px;
+            list-style: none;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 150px;
+        }
+        .menu>li{
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(black,grey);
+            color: white !important;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .li-hover{
+            width: 100%;
+            height: 0px;
+            transition: .4s;
+        }
+        .li-hover>li{
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: goldenrod;
+            color: white;
+            margin-bottom: 3px ;
+            cursor: pointer;
+        }
+
+        .menu>li:hover ~.li-hover{
+            height: 70px;
+        }
+        
+        .li-hover:hover{
+            height: 70px;
+        }
+        .li-hover>li:hover{
+            background: linear-gradient(90deg,black,orange,black);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>show and hide element : </h3>
+    <br>
+    <p>در این بخش به برسی حضور یا عدم حضور یک المان در سند html می پردازیم</p>
+    <br>
+    <h4>section one display:none </h4>
+    <br>
+    <p>پراپرتی display زمانی که به یک المان داده شود جایگاه آن المان را در صفحه تحت تاثیر قرار می دهد.</p>
+    <p>یکی از مقادیری که به این پراپرتی داده می شود value ای به نام none هست.</p>
+    <p>value none  وقتی به المانی نسبت داده شود آن المان جایگاهش را در سند html از دست داده و در ui از بین می رود و اینگونه به نظر می رسد که دیگر همچین المانی وجود ندارد.</p>
+    <br>
+    <p>در مثال زیر box 1 یک المان div هست که مقدار display:block  را دارد .</p>
+    <p>اما در box 2 همان المان مقدار display:none گرفته است پس در صفحه نمایش داده نمی شود:</p>
+    <br>
+    <section class="box-holder">
+        box 1
+        <div class="box1"></div>
+    </section>
+    <section class="box-holder">
+        box 2
+        <div class="box2"></div>
+    </section>
+    <br>
+    <p>همان طور که در مثال بالا مشاهده کردید در box 2  مربع قرمز رنگی به دلیل دادن پراپرتی display:none به المان div نمی بینید.</p>
+    <br>
+    <p>به طور کلی ما زمانی از این پراپرتی استفاده می کنیم که بخوایم یک المان را تحت شرایطی ظاهر و در حالتی دیگر غیر قابل مشاهده کنیم که همان show and hide نام دارد.</p>
+    <br>
+    <p>مثال زیر یک استفاده کاربردی از این پراپرتی با مقدار none  را نشان می دهد:</p>
+    <br>
+    <section class="box-holder box-hover">
+        box 2
+        <div class="box2"></div>
+    </section>
+    <br>
+    <p>در مثال بالا اگر با موس به داخل محیط المان box2 بروید مربع قرمز رنگ ظاهر می شود و با خارج شدن از محیط المان مربع قرمز به حالت پنهان خود باز می گردد.</p>
+    <br>
+    <p>چند نکته :</p>
+    <br>
+    <ul class="list">
+        <li>زمانی که به یک المان پراپرتی و مقدار diplay:none  را می دهید سند html  ای شما این گونه تصور می کند که این المان کلا در صفحه وجود نداشته و جایگاه آن المان را ازش می گیرد پس در نتیجه دیگر المان ها جایگاه آن المان را اشغال می کنند.</li>
+        <br>
+        <section class="box-holder issue1">
+            box 3
+            <div class="box"></div>
+            <div class="box"></div>
+        </section>
+        <br>
+        <p>در مورد بالا اگر با موس وارد محیط المان box 3 شوید مربع آبی رنگ از بین رفته و مربع قرمز رنگ جایگاه آن را اشغال می کند.</p>
+        <br>
+        <li>display:none پراپرتی transition را نمی پزیرد. این پراپرتی زمانی که به یک المان داده شود باعث می شود تغییرات روی آن المان در اثر انجام یک عملیاتی مثل  hover با یک زمان مشخصی انجام شود و به طور مثال یک ثانیه طول بکشد که یک مربع قرمز رنگ به آبی تغییر کند و .تغییرات در این زمان مثلا یک ثانیه در حال انجام است و سر یک ثانیه تغییرات مورد نظر کامل می شود.حالا دلیل آنکه این پراپرتی قابل پذیرش برای display:none  نیست اینست که شما به طور کل این المان را از سند در نمایش حذف کردید پس دیگر بعد خود هیچ پراپرتی دیگری را قبول نمی کند چون اصلا این المان وجود خارجی ندارد.</li>
+    </ul>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <!-- ******************************opacity***************************************** -->
+    <h4>section 2 opacity:1 or 0</h4>
+    <br>
+    <p>پراپرتی  opacity زمانی که به یک المان داده شود developer قادر است با مقادیر دادن به این پراپرتی المان مورد نظر را ظاهر یا پنهان کند .</p>
+    <p>اگر به یک المان opacity:1 بدهیم بدین معنیست که آن المان را به طور کامل ظاهر کرده و نمایش دهد.</p>
+    <p>حال اگر به یک المان opacity:0  بدهیم بدین معناس که المان را از نمایش حذف و پنهان کرده ایم.</p>
+    <p>یکی از قابلیت های جالب این پراپرتی این است که مقادیری بین 0 تا 1 را می پذیرد که از 0 کم رنگ ترین تا 1 ظاهر شدن کامل مقدار دهی می شود.</p>
+    <br>
+    <p>مثال زیر 3 مقدار مختلف به پراپرتی opacity را که به یک المان div نسبت داده شده است را نشان می دهد:</p>
+    <br>
+    <section class="box-holder ">
+        box 4
+        <div class="box4"></div>
+    </section>
+    <br>
+    <section class="box-holder ">
+        box 5
+        <div class="box5"></div>
+    </section>
+    <br>
+    <section class="box-holder ">
+        box 6
+        <div class="box6"></div>
+    </section>
+    <br>
+    <p>همان طور که در مثال بالا مشاهده می کنید در box 4 پراپرتی opacity:1  است که نشان دهنده ظاهر شدن کامل المان می باشد.در box 5 پراپرتی opacity:0.5 است که المان div ما را به صورت کم رنگ و رو به محو شدن نشان می دهد و در نهایت box 6 پراپرتی opacity:0 است و نشان دهنده پنهان شدن کامل المان است.</p>
+    <br>
+    <p>یک مثال کاربردی برای پراپرتی opacity : </p>
+    <br>
+    <section class="box-holder box-hover1">
+        box 7
+        <div class="box7"></div>
+    </section>
+    <br>
+    <p>در مثال بالا به کمک عملیات hover اگر با موس وارد محیط المان box 7  شوید یک مربع قرمز رنگ ظاهر وبا خارج شدن از محیط دوباره پنهان می شود.</p>
+    <br>
+    <p>چند نکته : </p>
+    <br>
+    <ul class="list">
+        <li>بر خلاف پراپرتی diplay:none پراپرتی opacity می تواند پراپرتی transition را بپذیرد . به مثال زیر توجه کنید:</li>
+        <br>
+        <section class="box-holder box-hover2">
+            box 8
+            <div class="box8"></div>
+        </section>
+        <br>
+        <p>همانطور که در بالا مشاهده کردید با ورد به محیط box 8 یک مربع قرمز رنگ شروع می کند به ظاهر شدن وبا خارج شدن از محیط شروع به پنهان شدن می کند.نکته مهم در این مثال انجام شدن این عملیات show and hide  تحت یک زمان است که باعث به وجود آمدن یک رابطه گرافیکی خوب با کاربر است.</p>
+        <br>
+        <li>بر خلاف display:none پراپرتی opacity  جایگاه المان را ازش نمی گیرد فقط آن المان در آن لحظه قابل مشاهده نیست. به مثال زیر توجه کنید :</li>
+        <br>
+        <section class="box-holder box-issue2">
+            box 9
+            <div class="box"></div>
+            <div class="box"></div>
+        </section>
+        <br>
+        <p>همانطور که در مثال بالا مشاهده کردید مربع آبی رنگ در اثر hover  کردن box 9  پنهان شد ولی جایگاه خودش در صفحه را از دست نداد.</p>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <h4>section 3 visibility </h4>
+    <br>
+    <p>پراپرتی visibility مثل display:none  عمل می کند با این تفاوت که المان را در سند html  ای از بین نمی برد.</p>
+    <br>
+    <p>مثال زیر در تکمیل توضیحات بالاس:</p>
+    <br>
+    <section class="box-holder box-issue3">
+        box 10
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+    <br>
+    <p>یک مثال : </p>
+    
+    <ul class="menu">
+        <li>
+            hover me
+        </li>
+        <div class="li-hover">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+        </div>
+    </ul>
+</body>
+
+</html>

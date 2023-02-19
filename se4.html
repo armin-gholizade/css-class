@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #section{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 50px auto;
+        }
+        #section>div{
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #section>div:first-child{
+            background: red;
+        }
+        #section>div:last-child{
+            background: green;
+        }
+        #section>div:nth-child(5){
+            background: yellow;
+        }
+        
+        #section>*:nth-last-child(2){
+            background: grey;
+        }
+        #section>div:nth-last-of-type(3){
+            background: blue;
+        }
+        #section>div:nth-of-type(2){
+            background: brown;
+        }
+        .box>div:first-child{
+            color: red;
+        }
+        .box1>div:first-of-type{
+            color: aqua;
+        }
+        .box>div:last-child{
+            background: orange;
+        }
+        .box1>div:last-of-type{
+            background: palevioletred;
+        }
+        .box>div:nth-child(3){
+            background: burlywood;
+        }
+        .box1>div:nth-of-type(3){
+            background: paleturquoise;
+        }
+        .box-test>div:last-of-type{
+            background: goldenrod;
+        }
+        .box-test>div:nth-last-of-type(2){
+            background: greenyellow;
+        }
+        h4{
+            text-transform: uppercase;
+            color: gray;
+        }
+        .menu li:nth-of-type(1)>a{
+            color: black;
+        }
+        .menu li:nth-of-type(2) a{
+            color: red;
+        }
+        .a{
+            color: green;
+        }
+        .menu a{
+            text-decoration: none;
+        }
+        .menu li{
+            border: 1px solid orange;
+            margin-top: 5px;
+        }
+
+
+        .table{
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            /* border: 1px solid black; */
+            border-collapse: collapse;
+
+        }
+        .table td {
+            border: 1px solid;
+            text-align: center;
+        }
+        .table>thead>tr>td{
+            height: 50px;
+        }
+        .table>tbody>tr>td{
+            /* vertical-align: baseline;
+            vertical-align: bottom; */
+            vertical-align: middle;
+        }
+        .table1{
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            
+        }
+        .table1 td{
+            background: aqua;
+        }
+        .table2{
+            width: 300px;
+            height: 200px;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+        .table2 td{
+            background: red;
+            border: 1px solid black;
+        }
+        .table3{
+            width: 300px;
+            height: 200px;
+            margin: 30px auto;
+            border: 1px solid black;
+        }
+        .table3 td{
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .table4{
+            width: 300px;
+            height: 100px;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+        .table4 td,.table4 th {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table5{
+            width: 400px;
+            height: 200px;
+            margin: 30px auto;
+            /* border-collapse: collapse; */
+            border: 1px solid black;
+            border-spacing: 10px;
+        }
+        .table5 td,.table5 th {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table6{
+            width: 300px;
+            height: 100px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .table6 td,.table6 th {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table7{
+            width: 500px;
+            height: 300px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .table7 td,.table7 th {
+            border: 1px solid black;
+            height: 30px;
+        }
+        .table7 tr:nth-of-type(even){
+            background-color: rgba(150, 212, 212, 0.4);
+        }
+        .table7 td:nth-of-type(even),.table7 th:nth-of-type(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+        }
+        .table8{
+            width: 500px;
+            height: 300px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .table8 td,.table8 th {
+            border: 1px solid black;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, accusantium.</h4>
+
+    <section id="section">
+        <div>box number of 1</div>
+        <div>box number of 2</div>
+        <div>box number of 3</div>
+        <div>box number of 4</div>
+        <div>box number of 5</div>
+        <div>box number of 6</div>
+        <div>box number of 7</div>
+        <div>box number of 8</div>
+        <div>box number of 9</div>
+        <div>box number of 10</div>
+    </section>
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, accusantium.</h4>
+
+    <div class="box box1">
+        <section>item</section>
+        <div>item 1</div>
+        <section>item test</section>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <section>item 6</section>
+    </div>
+    <br>
+    <br>
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, accusantium.</h4>
+
+    <div class="box">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+    </div>
+    <br>
+    <hr>
+    <section class="box-test">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+    </section>
+    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, accusantium.</h4>
+    <br>
+    <br>
+    <hr>
+    <ul class="menu">
+        <div>
+            <li><a href="">link 1</a></li>
+        <li><a href="">link 2</a></li>
+        <li><a class="a" href="">link 3</a></li>
+        </div>
+    </ul>
+    <br>
+    <br>
+    <hr>
+    <h1>table style</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>full name</td>
+                <td>age</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>armin</td>
+                <td>armin gholizade</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>arash</td>
+                <td>arash gholzami</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>ghasem</td>
+                <td>ghasem hassani</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <table class="table1">
+        <thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table2">
+        <thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table3">
+        <thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <hr>
+
+    <table class="table4">
+        <thead>
+            <tr>
+                <th colspan="2">full name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tr>
+            <td>armin</td>
+            <td>gholizade</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>arash</td>
+            <td>gholami</td>
+            <td>28</td>
+        </tr>
+    </table>
+    <table class="table4">
+        <caption>sahand samane Employees</caption>
+        <thead>
+            <tr>
+                <th colspan="2">full name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tr>
+            <td>armin</td>
+            <td>gholizade</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>arash</td>
+            <td>gholami</td>
+            <td>28</td>
+        </tr>
+    </table>
+    <table class="table5">
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>full name</td>
+                <td>age</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>armin</td>
+                <td>armin gholizade</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>arash</td>
+                <td>arash gholzami</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>ghasem</td>
+                <td>ghasem hassani</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table6">
+        <tr>
+            <th>Name</th>
+            <td>armin gholizade</td>
+          </tr>
+          <tr>
+            <th rowspan="2">Phone number</th>
+            <td>0937-10-54-578</td>
+          </tr>
+          <tr>
+            <td>0935-3132-8850</td>
+          </tr>
+    </table>
+    <table class="table7">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table8">
+        <colgroup>
+            <col span="1" style="background-color: #D6EEEE">
+            <col span="3" style="background-color: pink">
+            <col span="2" style="background-color: grey">
+            <col span="1" style="background-color: blue">
+          </colgroup>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

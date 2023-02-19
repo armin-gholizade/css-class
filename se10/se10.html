@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>se10</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box-holder {
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 50px auto;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: red;
+            color: white;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            animation: moveBox1 2s linear;
+
+        }
+        .box2 {
+            animation: moveBox2 4s linear;
+
+        }
+        .box3 {
+            animation: moveBox1 1s 2s linear;
+
+        }
+        .box4 {
+            animation: moveBox1 1s 2s linear infinite;
+
+        }
+        .box5 {
+            animation: moveBox1  2s linear infinite alternate;
+
+        }
+        .box6 {
+            animation: moveBox1  2s linear infinite alternate-reverse;
+
+        }
+        .box7 {
+            animation: moveBox1  2s linear forwards;
+
+        }
+        .box8 {
+            animation: moveBox1  2s linear backwards;
+
+        }
+        .box9{
+            animation-name: moveBox1;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-play-state: running;
+        }
+
+        @keyframes moveBox1 {
+            from {
+                transform: translateX(0px);
+            }
+
+            to {
+                transform: translateX(400px);
+            }
+        }
+
+        @keyframes moveBox2 {
+            0%{transform: translate(0px ,0px );}
+            25%{transform: translate(400px ,0px );}
+            50%{transform: translate(400px ,200px );}
+            75%{transform: translate(0px ,200px );}
+            100%{transform: translate(0px ,0px );}
+        }
+
+
+        /* ******************************************** */
+        .box-t{
+            transition-timing-function: linear;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+        .box-holder-t:hover>.box-t{
+            transform: translateX(400px);
+        }
+        .timing-function{
+            margin: 50px auto;
+            border: 1px solid black;
+            width: 900px;
+            height: 1100px;
+        }
+        .timing-function>div{
+            margin-bottom: 10px;
+        }
+        .timing-function:hover>div{
+            transform: translateX(800px);
+        }
+        .box-test{
+            transition: 2s;
+        }
+        .timing-function>div:nth-of-type(1){
+            transition-timing-function: ease;
+        }
+        .timing-function>div:nth-of-type(2){
+            transition-timing-function: ease-in;
+        }
+        .timing-function>div:nth-of-type(3){
+            transition-timing-function: ease-in-out;
+        }
+        .timing-function>div:nth-of-type(4){
+            transition-timing-function: ease-out;
+        }
+        .timing-function>div:nth-of-type(5){
+            transition-timing-function: step-end;
+        }
+        .timing-function>div:nth-of-type(6){
+            transition-timing-function: step-start;
+        }
+        .timing-function>div:nth-of-type(7){
+            transition-timing-function: steps(5);
+        }
+        .timing-function>div:nth-of-type(8){
+            transition-timing-function: linear;
+        }
+        .timing-function>div:nth-of-type(9){
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .timing-function>div:nth-of-type(10){
+            transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        }
+        /* *********************************** */
+        .text{
+            font-size: 40px;
+            text-align: center;
+            text-shadow: 4px 10px 3px  black;
+            margin-bottom: 10px;
+        }
+        .text1{
+            font-size: 40px;
+            text-align: center;
+            text-shadow:1px 1px 3px  rgb(0, 0, 0);
+        }
+        .text2{
+            font-size: 40px;
+            text-align: center;
+            color: white;
+            text-shadow:0px 0px 3px  rgb(0, 0, 0);
+        }
+
+        .box-shadow{
+            width: 200px;
+            height: 200px;
+            background: black;
+            margin: 20px auto;
+            box-shadow: 1px 1px 1px 1px rgb(255, 0, 0);
+        }
+        .box-shadow1{
+            width: 200px;
+            height: 200px;
+            background: black;
+            margin: 20px auto;
+            box-shadow: 1px 1px 10px 1px rgb(255, 0, 0);
+        }
+        
+        .box-shadow2{
+            width: 200px;
+            height: 200px;
+            background: black;
+            margin: 40px auto;
+            box-shadow: 1px 1px 1px 10px rgb(255, 0, 0);
+        }
+        .box-shadow3{
+            width: 200px;
+            height: 200px;
+            background: black;
+            margin: 20px auto;
+            box-shadow: 0px 0px 20px 10px rgb(255, 0, 0);
+        }
+        .box-shadow4{
+            width: 200px;
+            height: 200px;
+            background: black;
+            margin: 20px auto;
+            box-shadow:inset 0px 0px 20px 10px rgb(255, 0, 0);
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1>animation :</h1>
+    <section class="box-holder">
+        <div class="box box1">box1</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box2">box2</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box3">box3</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box4">box4</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box5">box5</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box6">box6</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box7">box7</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box8">box8</div>
+    </section>
+    <section class="box-holder">
+        <div class="box box9">box9</div>
+    </section>
+    <br>
+    <br>
+    <hr>
+    <h1>transtion : </h1>
+    <section class="box-holder box-holder-t">
+        <div class="box box-t">box</div>
+    </section>
+    <section class="timing-function">
+        <div class="box box-test">ease</div>
+        <div class="box box-test">ease-in</div>
+        <div class="box box-test">ease-in-out</div>
+        <div class="box box-test">ease-out</div>
+        <div class="box box-test">step-end</div>
+        <div class="box box-test">step-start</div>
+        <div class="box box-test">steps()</div>
+        <div class="box box-test">linear</div>
+        <div class="box box-test">cubic-bezier1</div>
+        <div class="box box-test">cubic-bezier2</div>
+    </section>
+    <br>
+    <br>
+    <hr>
+    <h1>box & text shadow : </h1>
+    <br>
+    <p class="text">armin gholizade</p>
+    <p class="text1">armin gholizade</p>
+    <p class="text2">armin gholizade</p>
+    <br>
+    <br>
+    <br>
+    <div class="box-shadow"></div>
+    <div class="box-shadow1"></div>
+    <div class="box-shadow2"></div>
+    <div class="box-shadow3"></div>
+    <div class="box-shadow4"></div>
+</body>
+
+</html>

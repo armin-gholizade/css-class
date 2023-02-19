@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            perspective: 900px;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s linear;
+        }
+        .box-r{
+            width: 200px;
+            height: 200px;
+            background: rgb(248, 3, 3);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s linear;
+
+        }
+        .box-s{
+            width: 200px;
+            height: 200px;
+            background: rgb(57, 16, 240);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s linear;
+
+        }
+        .box-k{
+            width: 200px;
+            height: 200px;
+            background: rgb(240, 16, 139);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s linear;
+
+        }
+        .box-d{
+            width: 200px;
+            height: 200px;
+            background: rgb(8, 112, 48);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s linear;
+
+        }
+        .box-t{
+            width: 200px;
+            height: 200px;
+            background: rgb(46, 34, 2);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s linear;
+
+        }
+        .container:hover .box1{
+            transform: translateX(100px);
+        }
+        .container:hover .box2{
+            transform: translateY(100px);
+        }
+        .container:hover .box3{
+            transform: translate(100px , 100px);
+        }
+        .container:hover .box4{
+            transform: rotate(90deg);
+        }
+        .container:hover .box5{
+            transform: rotatex(40deg);
+        }
+        .container:hover .box6{
+            transform: rotateY(40deg);
+        }
+       .container:hover  .box7{
+            transform: scale(1.5);
+        }
+        .container:hover  .box8{
+            transform: scale(-1);
+        }
+        .container:hover  .box9{
+            transform: scale(0.1);
+        }
+        .container:hover  .box10{
+            transform: scalex(1.5);
+        }
+        .container:hover  .box11{
+            transform: scaley(1.5);
+        }
+        .container:hover  .box12{
+            transform: skew(10deg , 10deg);
+        }
+        .container:hover  .box13{
+            transform: skewx(10deg);
+        }
+        .container:hover  .box14{
+            transform: skewy(10deg);
+        }
+        .container:hover  .box15{
+            transform: translate3d(50px,20px,200px);
+        }
+        .container:hover  .box16{
+            transform: translatez(200px);
+        }
+        .container:hover  .box17{
+            transform: rotate3d(10,20,30,90deg);
+        }
+        .container:hover  .box18{
+            transform: rotateZ(90deg);
+        }
+        .container:hover  .box19{
+            transform: scaleZ(5);
+        }
+        .container:hover  .box20{
+            transform-origin: 0% 0% ;
+            transform: rotate(360deg);
+        }
+        .container:hover  .box21{
+            transform-origin: 0% 0% ;
+            transform: rotatex(360deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>css 3</h1>
+    <h2>transform :</h2>
+    <h3>translate</h3>
+    <div class="container"> <div class="box">box</div></div>
+    <div class="container"> <div class="box box1">box</div></div>
+    <div class="container"> <div class="box box2">box</div></div>
+    <div class="container"> <div class="box box3">box</div></div>
+    <br>
+    <br>
+    <hr>
+    <h3>rotate</h3>
+    <div class="container"> <div class="box-r box4">box</div></div>
+    <div class="container"> <div class="box-r box5">box</div></div>
+    <div class="container"> <div class="box-r box6">box</div></div>
+    <br>
+    <br>
+    <hr>
+    <h3>scale</h3>
+    <div class="container"> <div class="box-s box7">box</div></div>
+    <div class="container"> <div class="box-s box8">box</div></div>
+    <div class="container"> <div class="box-s box9">box</div></div>
+    <div class="container"> <div class="box-s box10">box</div></div>
+    <div class="container"> <div class="box-s box11">box</div></div>
+    <br>
+    <br>
+    <hr>
+    <div class="container"> <div class="box-k box12">box</div></div>
+    <div class="container"> <div class="box-k box13">box</div></div>
+    <div class="container"> <div class="box-k box14">box</div></div>
+    <br>
+    <br>
+    <hr>
+    <h3>3D</h3>
+    <div class="container"> <div class="box-d box15">box</div></div>
+    <div class="container"> <div class="box-d box16">box</div></div>
+    <div class="container"> <div class="box-d box17">box</div></div>
+    <div class="container"> <div class="box-d box18">box</div></div>
+    <div class="container"> <div class="box-d box19">box</div></div>
+    <br>
+    <br>
+    <hr>
+    <div class="container"> <div class="box-t box20">box</div></div>
+    <div class="container"> <div class="box-t box21">box</div></div>
+
+
+
+
+</body>
+</html>
